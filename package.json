@@ -4,7 +4,9 @@
   "description": "Crowd funding event or 'function' planning web application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node server.js --ignore public/",
+    "dev": "webpack -wd"
   },
   "repository": {
     "type": "git",
@@ -13,6 +15,7 @@
   "author": "Philip Putnam",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.15.3",
     "mongodb": "^2.2.29",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
