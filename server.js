@@ -1,12 +1,17 @@
-import config from './config';
 import express from 'express';
+
+import config from './config';
+import serverRender from './serverRender';
 
 const server = express();
 server.set('view engine', 'ejs');
 
 server.get('/', (req, res) => {
-  res.render('index');
+  res.render('index', {
+    content: serverRender()
+  });
 });
+
 
 server.use(express.static('public'));
 
