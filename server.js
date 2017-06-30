@@ -12,7 +12,6 @@ server.get('/', (req, res) => {
   });
 });
 
-
 server.use(express.static('public'));
 
 server.listen(config.port, () => {
