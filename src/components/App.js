@@ -1,9 +1,9 @@
 import React from 'react';
 
-// import Home from './Home';
+import Home from './Home';
 
 const App = () => (
-  <h1>Hello from App.js!</h1>
+  <Home />
 );
 
 export default App;
