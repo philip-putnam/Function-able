@@ -4,6 +4,6 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 
 ReactDOM.render(
-  <App />,
+  <h1>Hello!</h1>,
   document.getElementById('root')
 );
