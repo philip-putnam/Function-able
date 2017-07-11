@@ -1,4 +1,5 @@
-import express from 'express';
+const express =  require('express');
+const path = require('path');
 import mongoose from 'mongoose';
 import config from './config';
 
@@ -8,13 +9,14 @@ mongoose.connect('mongodb://localhost:27017/functionable');
 const db = mongoose.connection;
 db.on('error',  x => console.error(x, 'connection error'));
 
-const server = express();
-server.set('view engine', 'ejs');
+const app = express();
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
-server.use('/', index);
+app.use(express.static(path.join(__dirname, 'public')));
 
-server.use(express.static('public'));
+app.use('/*', index);
 
-server.listen(config.port, () => {
+app.listen(config.port, () => {
   console.info('Express listening on port ', config.port);
 });
