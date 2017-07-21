@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
+// import PropTypes from 'prop-types';
 
-const Register = () => {
-  return (
-    <form >
-      <input type='text' />
-      <input type='submit' value='name' />
-    </form>
-  );
-};
-
-export default Register;
+export default class Register extends Component {
+  render() {
+    return (
+      <form>
+        <input type='text' />
+        <input type='submit' value='Submit' />
+      </form>
+    );
+  }
+}
