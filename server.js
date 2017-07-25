@@ -3,6 +3,7 @@ const path = require('path');
 import mongoose from 'mongoose';
 import config from './config';
 
+const database = require('./api/index');
 const index = require('./router/index');
 
 mongoose.connect('mongodb://localhost:27017/functionable');
@@ -15,6 +16,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/api', database);
 app.use('/*', index);
 
 app.listen(config.port, () => {

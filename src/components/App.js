@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Header from './Header';
 import Home from './Home';
 import Register from './Register';
+import Events from './Events';
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <Header />
         <Route exact path='/' component={Home} />
         <Route path='/registration' component={Register} />
+        <Route path='/events' component={Events} />
       </div>
     </BrowserRouter>
   );

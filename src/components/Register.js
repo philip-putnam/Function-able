@@ -8,18 +8,19 @@ export default class Register extends Component {
   }
 
   onRegister = e => {
-    console.log('onRegister', e.target.value);
-    this.setState({ name: e.target.value}); 
+    this.setState({ name: e.target.value});
   }
 
-  onSubmit = e => {
-    e.preventDefault();
-  }
+  // onSubmit = e => {
+  //   e.preventDefault();
+  // }
 
   render() {
-    console.log(this.state.name);
     return (
-      <form onSubmit={this.onSubmit}>
+      <form
+        method='POST'
+        action='/api/register'
+        onSubmit={this.onSubmit}>
         <input type='text' onChange={this.onRegister} />
         <input type='submit' value='Submit' />
       </form>
