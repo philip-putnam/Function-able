@@ -1,8 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Events = () => {
   return (
-    <h1>Events</h1>
+    <div>
+      <h1>Events</h1>
+      <Link to='/create-a-function'>Create New Function</Link>
+    </div>
   );
 };
 
