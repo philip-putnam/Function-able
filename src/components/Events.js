@@ -11,6 +11,13 @@ export default class Events extends Component {
     {name: 'bye', key: '2'}] };
   }
 
+  newEvent = (name, key) => {
+    this.state.events.push({name, key});
+    this.setState({
+      events: this.state.events
+    });
+  }
+
   render() {
     return (
       <div>
@@ -24,7 +31,9 @@ export default class Events extends Component {
           })}
         </ul>
         <Link to='/create-a-function'>Create New Function</Link>
-        <CreateFunction events={this.state.events} />
+        <CreateFunction
+          events={this.state.events}
+          newEvent={this.newEvent} />
       </div>
     );
   }
