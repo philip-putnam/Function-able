@@ -7,12 +7,12 @@ export default class Events extends Component {
   constructor(props) {
     super(props);
     this.state = { events: [{
-      name: 'hi', key: '1' },
-    {name: 'bye', key: '2'}] };
+      name: 'hi', date: '10/3/2017', deadline: '09/24/2017', dependency: 'no', key: '1' },
+    {name: 'bye', date: '7/29/2017', deadline: '07/20/2017', dependency: 'yes', key: '2'}]};
   }
 
-  newEvent = (name, key) => {
-    this.state.events.push({name, key});
+  newEvent = (event) => {
+    this.state.events.push(event);
     this.setState({
       events: this.state.events
     });
@@ -26,7 +26,7 @@ export default class Events extends Component {
         <ul>
           {this.state.events.map((event) => {
             return (
-              <li key={event.key}>{event.name}</li>
+              <li key={event.key}>{event.name} {event.date} {event.deadline} {event.dependency}</li>
             );
           })}
         </ul>

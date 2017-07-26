@@ -4,8 +4,18 @@ import PropTypes from 'prop-types';
 class CreateFunction extends Component {
 
   handleSubmit = (event) => {
+    let newEvent = {
+      name: event.target.eventName.value,
+      date: event.target.eventDate.value,
+      deadline: event.target.eventDeadline.value,
+      dependency: event.target.dependency.value,
+      key: '3',
+    };
     event.preventDefault();
-    this.props.newEvent(this.refs.eventName.value, 3);
+    this.props.newEvent(newEvent);
+    event.target.eventName.value = '';
+    event.target.eventDate.value = '';
+    event.target.eventDeadline.value = '';
   };
 
   render() {
@@ -14,13 +24,16 @@ class CreateFunction extends Component {
         <h1>Create a new Function</h1>
         <form onSubmit={this.handleSubmit}>
           <label>Function/Event Name: </label>
-          <input type='text' ref='eventName' /><br/>
+          <input type='text' name='eventName' /><br/>
           <label>Function Date: </label>
-          <input type='text' /><br/>
+          <input type='text' name='eventDate' /><br/>
           <label>Funding Deadline: </label>
-          <input type='text' /><br/>
+          <input type='text' name='eventDeadline' /><br/>
           <label>Is this function dependent on meeting budget goals? </label>
-          <input type='text' /><br/>
+          <select name='dependency' >
+            <option value='yes'>Yes</option>
+            <option value='no'>No</option>
+          </select>
           <input type='submit' value='Submit' />
         </form>
       </div>
