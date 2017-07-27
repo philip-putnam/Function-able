@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import Login from './Login';
+
 const Header = () => {
   return (
     <header>
@@ -10,6 +12,7 @@ const Header = () => {
         <li><Link to='/registration'>Register</Link></li>
         <li><Link to='/events'>Events</Link></li>
       </ul>
+      <Login />
     </header>
   );
 };
