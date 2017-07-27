@@ -16,7 +16,6 @@ export default class Register extends Component {
       event.target.lastName.value,
       event.target.email.value,
       event.target.password.value,
-      event.target.confirmPassword.value
     );
 
   };
@@ -35,8 +34,6 @@ export default class Register extends Component {
         <input type='text' name='email' /><br/>
         <label>Password: </label>
         <input type='text' name='password' /><br/>
-        <label>Confirm Password: </label>
-        <input type='text' name='confirmPassword' /><br/>
         <input type='submit' value='Submit' /><br/>
       </form>
     );

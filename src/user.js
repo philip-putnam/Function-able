@@ -6,7 +6,6 @@ export const registerUser = (
   lastName,
   email,
   password,
-  confirmPassword
 ) => {
   return axios.post('/user/register', {
     username,
@@ -14,7 +13,11 @@ export const registerUser = (
     lastName,
     email,
     password,
-    confirmPassword
   })
     .then(res => res.data);
-} ;
+};
+
+export const loginUser = (username, password) => {
+  return axios.post('/user/login', {username, password})
+    .then(res => res.data);
+};
