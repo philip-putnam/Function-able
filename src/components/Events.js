@@ -13,20 +13,8 @@ export default class Events extends Component {
         name: 'hi', date: '10/3/2017', deadline: '09/24/2017', dependency: 'no', key: '1' },
       {name: 'bye', date: '7/29/2017', deadline: '07/20/2017', dependency: 'yes', key: '2'}]};
   }
-
-  // fetchEvents = () => {
-  //   console.log('hello!');
-  //   api.fetchEvents().then(events => {
-  //     this.setState({
-  //       temp: events
-  //     });
-  //   });
-  // }
-  //
+  
   componentWillMount() {
-    console.log('component will mount!');
-    console.log(axios.get('/api/events')
-      .then(res => res.data));
     api.fetchEvents()
       .then(res => {
         this.setState({
