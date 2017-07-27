@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 
 const index = require('./router/index');
 const api = require('./router/api/index');
+const user = require('./router/api/user');
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/user', user);
 app.use('/api', api);
 app.use('/*', index);
 

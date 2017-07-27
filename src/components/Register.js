@@ -18,7 +18,6 @@ export default class Register extends Component {
   render() {
     return (
       <form
-        method='POST'
         action='/api/register'
         onSubmit={this.onSubmit}>
         <input type='text' onChange={this.onRegister} />
