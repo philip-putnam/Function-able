@@ -7,9 +7,14 @@ export default class Register extends Component {
     this.state = { name: '' };
   }
 
-  onRegister = e => {
-    this.setState({ name: e.target.value});
-  }
+  handleSubmit = event => {
+    event.preventDefault();
+    console.log(event);
+  };
+
+  // onRegister = e => {
+  //   this.setState({ name: e.target.value});
+  // }
 
   // onSubmit = e => {
   //   e.preventDefault();
@@ -18,10 +23,20 @@ export default class Register extends Component {
   render() {
     return (
       <form
-        action='/api/register'
-        onSubmit={this.onSubmit}>
-        <input type='text' onChange={this.onRegister} />
-        <input type='submit' value='Submit' />
+        onSubmit={this.handleSubmit}>
+        <label>Username: </label>
+        <input type='text' name='username' /><br/>
+        <label>First Name: </label>
+        <input type='text' name='firstName' /><br/>
+        <label>Last Name: </label>
+        <input type='text' name='lastName' /><br/>
+        <label>Email: </label>
+        <input type='text' name='email' /><br/>
+        <label>Password: </label>
+        <input type='text' name='password' /><br/>
+        <label>Confirm Password: </label>
+        <input type='text' name='confirmPassword' /><br/>
+        <input type='submit' value='Submit' /><br/>
       </form>
     );
   }
