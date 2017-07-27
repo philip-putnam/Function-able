@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import * as users from '../user.js';
 // import PropTypes from 'prop-types';
 
 export default class Register extends Component {
@@ -9,16 +10,16 @@ export default class Register extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(event);
+    users.registerUser(
+      event.target.username.value,
+      event.target.firstName.value,
+      event.target.lastName.value,
+      event.target.email.value,
+      event.target.password.value,
+      event.target.confirmPassword.value
+    );
+
   };
-
-  // onRegister = e => {
-  //   this.setState({ name: e.target.value});
-  // }
-
-  // onSubmit = e => {
-  //   e.preventDefault();
-  // }
 
   render() {
     return (
