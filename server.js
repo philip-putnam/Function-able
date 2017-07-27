@@ -23,8 +23,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(require('express-session')({
   secret: 'events and functions whoa!',
-  reseave: false,
-  saveUninitialized: false
+  resave: false,
+  saveUninitialised: false
 }));
 app.use(passport.initialize());
 app.use(passport.session());
