@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-// import * as api from '../api';
+import * as api from '../api';
+import axios from 'axios';
 
 import CreateFunction from './CreateFunction';
 
@@ -22,10 +23,17 @@ export default class Events extends Component {
   //   });
   // }
   //
-  // componentWillMount() {
-  //   console.log('component will mount!');
-  //   {this.fetchEvents};
-  // }
+  componentWillMount() {
+    console.log('component will mount!');
+    console.log(axios.get('/api/events')
+      .then(res => res.data));
+    api.fetchEvents()
+      .then(res => {
+        this.setState({
+          temp: res[0].name
+        });
+      });
+  }
 
   newEvent = (event) => {
     this.state.events.push(event);

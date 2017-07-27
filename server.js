@@ -2,11 +2,14 @@ const express =  require('express');
 const path = require('path');
 import config from './config';
 import bodyParser from 'body-parser';
+const mongoose = require('mongoose');
 
 const index = require('./router/index');
 const api = require('./router/api/index');
 
 const app = express();
+
+mongoose.connect(config.mongodbUri);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
