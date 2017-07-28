@@ -7,19 +7,22 @@ export default class Header extends Component {
   constructor(props) {
     super(props);
     this.state = { user: '',
+      userId: '',
       loggedIn: false };
   }
 
-  loggedIn = (user) => {
+  loggedIn = (user, id) => {
     let tempUser = user;
     if (!tempUser) {
       this.setState({
         user: tempUser,
+        id: id,
         loggedIn: false
       });
     } else {
       this.setState({
         user: tempUser,
+        id: id,
         loggedIn: true
       });
     }

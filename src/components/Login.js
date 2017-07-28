@@ -9,7 +9,8 @@ class Login extends Component {
     users.loginUser(event.target.username.value, event.target.password.value)
       .then(res => {
         let user = res.username;
-        this.props.loggedIn(user);
+        let id = res._id;
+        this.props.loggedIn(user, id);
       });
     event.target.username.value = '';
     event.target.password.value = '';

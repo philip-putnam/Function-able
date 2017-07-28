@@ -5,7 +5,10 @@ const Event = new Schema({
   name: String,
   date: String,
   deadline: String,
-  dependency: String
+  dependency: String,
+  creator: String,
+  privacy: String,
+  guests: Array  
 });
 
 module.exports = mongoose.model('Event', Event);

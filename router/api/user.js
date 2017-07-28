@@ -4,6 +4,15 @@ const router = express.Router();
 
 const User = require('../../models/user');
 
+router.post('/info', (req, res) => {
+  User.find({ username: req.body.username }, (err, users) => {
+    if(err) {
+      res.send(err);
+    }
+    res.json(users);
+  });
+});
+
 router.get('/register', (req, res) => {
   return res.send('user created!');
 });
