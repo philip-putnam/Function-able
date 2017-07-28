@@ -23,8 +23,26 @@ export default class Event extends Component {
       });
   }
 
-  contribute = () => {
+  updateState = () => {
+    let eventName = this.state.event[0].name;
+    let tempEvent = [];
+    api.fetchEvent(eventName)
+      .then(res => {
+        res.map(event => {
+          tempEvent.push(event);
+          this.setState({
+            event: tempEvent
+          });
+        });
+      });
+  }
 
+  contribute = (event) => {
+    event.preventDefault();
+    let contribAmount = event.target.contribute.value;
+    let newAmount = parseInt(this.state.event[0].currentContrib) + parseInt(contribAmount);
+    api.contribute(this.state.event[0].name, newAmount);
+    this.updateState();
   }
 
   render() {

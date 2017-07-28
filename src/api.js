@@ -30,3 +30,8 @@ export const createEvent = (
   })
     .then(res => res.data);
 };
+
+export const contribute = (name, contrib) => {
+  return axios.post('/api/update', {name, contrib})
+    .then(res => res.data);
+};
