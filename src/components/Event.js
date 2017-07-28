@@ -43,12 +43,13 @@ export default class Event extends Component {
     let newAmount = parseInt(this.state.event[0].currentContrib) + parseInt(contribAmount);
     api.contribute(this.state.event[0].name, newAmount);
     this.updateState();
+    event.target.contribute.value = '';
   }
 
   render() {
     return (
-      <div>
-        <h3>{this.state.event.map((event) => {
+      <div className='eventBody'>
+        {this.state.event.map((event) => {
           return (
             <div key={event._id}>
               <div className='mainDescrip'>
@@ -66,10 +67,20 @@ export default class Event extends Component {
                   <button type='submit'>Contribute</button>
                 </form>
               </div>
+              <div className='stretchGoals'>
+                {event.stretchGoals.map((goal, key) => {
+                  return (
+                    <div key={key}>
+                      <p>Goal Name: {goal.name}</p>
+                      <p>Goal ${goal.goal}</p>
+                      <p>Current Contribution: ${goal.currentContrib}</p>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           );
-        })}</h3>
-        <h3></h3>
+        })}
       </div>
     );
   }

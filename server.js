@@ -6,18 +6,12 @@ import bodyParser from 'body-parser';
 const mongoose = require('mongoose');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-import sassMiddleware from 'node-sass-middleware';
 
 const index = require('./router/index');
 const api = require('./router/api/index');
 const user = require('./router/api/user');
 
 const app = express();
-
-app.use(sassMiddleware({
-  src: path.join(__dirname, 'sass'),
-  dest: path.join(__dirname, '/public/css')
-}));
 
 mongoose.connect(config.mongodbUri);
 

@@ -23,7 +23,9 @@ export default class Register extends Component {
   render() {
     return (
       <form
-        onSubmit={this.handleSubmit}>
+        onSubmit={this.handleSubmit}
+        className='registrationForm'
+      >
         <label>Username: </label>
         <input type='text' name='username' /><br/>
         <label>First Name: </label>

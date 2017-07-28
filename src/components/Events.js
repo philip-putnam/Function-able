@@ -39,18 +39,20 @@ export default class Events extends Component {
   render() {
     return (
       <div>
-        <h1>Events</h1>
-        <h2>Your Functions & Events:</h2>
+        <div className='eventList'>
+          <h1>Events</h1>
+          <h2>Functions & Events:</h2>
 
-        <ul>
-          {this.state.events.map((event) => {
-            return (
-              <li key={event._id}>
-                <Link to={`/event/${event.name}`}>{event.name}</Link>
-              </li>
-            );
-          })}
-        </ul>
+          <ul>
+            {this.state.events.map((event) => {
+              return (
+                <li key={event._id}>
+                  <Link to={`/event/${event.name}`}>{event.name}</Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
         <CreateFunction
           events={this.state.events}
           newEvent={this.newEvent} />

@@ -25,7 +25,7 @@ class CreateFunction extends Component {
     return (
       <div>
         <h1>Create a new Function</h1>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className='createFunctionForm'>
           <label>Function/Event Name: </label>
           <input type='text' name='eventName' /><br/>
           <label>Primary Monetary Goal: </label>

@@ -25,11 +25,46 @@
   margin-top: 0.5px;
 }
 
-.mainDescrip {
+.eventList {
+  width: 400px;
+  height: 400px;
   float: left;
 }
 
+.mainDescrip {
+  float: left;
+  width: 50%;
+  border: 1px solid black;
+}
+
+.mainDescrip h3 {
+  margin-top: 5px;
+}
+
 .sidebarDescrip {
-  float: right;
+  margin-left: auto;
   width: 300px;
+  border: 1px solid black;
+  padding: 8px;
+  margin-right: 15px;
+  margin-top: 5px;
+  background-color: lightblue;
+}
+
+.stretchGoals {
+  margin-left: auto;
+  width: 300px;
+  border: 1px solid black;
+  padding: 8px;
+  margin-right: 15px;
+  margin-top: 5px;
+  background-color: lightblue;
+}
+
+.createFunctionForm input, select {
+  margin-bottom: 5px;
+}
+
+.registrationForm input {
+  margin: 5px;
 }
