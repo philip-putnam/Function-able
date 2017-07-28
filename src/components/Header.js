@@ -42,8 +42,7 @@ export default class Header extends Component {
 
   render() {
     return (
-      <header>
-        <h1>Links</h1>
+      <header className='navbar'>
         <h3>Current User: {this.state.user}</h3>
         <ul>
           <li><Link to='/'>Home</Link></li>
