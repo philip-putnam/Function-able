@@ -1,6 +1,6 @@
 .navbar {
   background-color: lightgreen;
-  height: 180px;
+  height: 190px;
 }
 
 .navbar h1 {
@@ -13,6 +13,14 @@
   float: left;
   style: none;
   width: 200px;
+}
+
+.welcomeMessage p {
+  font-size: 20px;
+}
+
+.reactTag {
+  font-size: 80px;
 }
 
 .loginForm {
@@ -34,7 +42,6 @@
 .mainDescrip {
   float: left;
   width: 50%;
-  border: 1px solid black;
 }
 
 .mainDescrip h3 {
@@ -44,7 +51,6 @@
 .sidebarDescrip {
   margin-left: auto;
   width: 300px;
-  border: 1px solid black;
   padding: 8px;
   margin-right: 15px;
   margin-top: 5px;
@@ -54,11 +60,14 @@
 .stretchGoals {
   margin-left: auto;
   width: 300px;
-  border: 1px solid black;
   padding: 8px;
   margin-right: 15px;
   margin-top: 5px;
   background-color: lightblue;
+}
+
+button {
+  padding: 4px;
 }
 
 .createFunctionForm input, select {

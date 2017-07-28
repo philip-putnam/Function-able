@@ -74,6 +74,11 @@ export default class Event extends Component {
                       <p>Goal Name: {goal.name}</p>
                       <p>Goal ${goal.goal}</p>
                       <p>Current Contribution: ${goal.currentContrib}</p>
+                      <form>
+                        <label>Contribute: </label>
+                        <input type='number' name='contribute'/>
+                        <button type='submit'>Contribute</button>
+                      </form>
                     </div>
                   );
                 })}
