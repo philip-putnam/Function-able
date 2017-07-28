@@ -13,13 +13,16 @@ export default class App extends Component {
     return (
       <BrowserRouter>
         <div>
-          <h1>Function-able!</h1>
           <Header />
-          <Route exact path='/' component={Home} />
-          <Route path='/registration' component={Register} />
-          <Route path='/events' component={Events} />
-          <Route path='/event/:name' component={Event} />
-          <Route path='/create-a-function' component={CreateFunction} />
+          <div>
+            <div className='container'>
+              <Route exact path='/' component={Home} />
+              <Route path='/registration' component={Register} />
+              <Route path='/events' component={Events} />
+              <Route path='/event/:name' component={Event} />
+              <Route path='/create-a-function' component={CreateFunction} />
+            </div>
+          </div>
         </div>
       </BrowserRouter>
     );

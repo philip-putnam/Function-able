@@ -43,13 +43,18 @@ export default class Header extends Component {
   render() {
     return (
       <header className='navbar'>
-        <h3>Current User: {this.state.user}</h3>
-        <ul>
-          <li><Link to='/'>Home</Link></li>
-          {this.userNav()}
-          <li><Link to='/events'>Events</Link></li>
-        </ul>
-        <Login loggedIn={this.loggedIn} checkLogin={this.checkLogin}/>
+        <h1>Function-able!</h1>
+        <div className='navLinks'>
+          <ul>
+            <li><Link to='/'>Home</Link></li>
+            {this.userNav()}
+            <li><Link to='/events'>Events</Link></li>
+          </ul>
+        </div>
+        <div className='loginForm'>
+          <p>Current User: {this.state.user}</p>
+          <Login loggedIn={this.loggedIn} checkLogin={this.checkLogin}/>
+        </div>
       </header>
     );
   }

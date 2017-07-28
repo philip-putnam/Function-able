@@ -1,0 +1,24 @@
+.navbar {
+  background-color: lightgreen;
+  height: 200px;
+}
+
+.navbar h1 {
+  margin-bottom: 2px;
+}
+
+.navLinks {
+  float: left;
+  style: none;
+  width: 200px;
+}
+
+.loginForm {
+  padding: 2px;
+  width: 200px;
+  float: right;
+}
+
+.loginForm p {
+  margin-top: 0.5px;
+}
