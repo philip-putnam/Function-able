@@ -50,6 +50,19 @@ router.post('/update', (req, res) => {
   });
 });
 
+router.post('/updateStretchGoal', (req, res) => {
+  Event.updateOne( { _id: req.body.id },
+    { $set: { 'stretchGoals': [{
+      'currentContrib': req.body.contrib,
+    }]
+    }}, (err, event) => {
+      if(err) {
+        res.send(err);
+      }
+      res.json(event);
+    });
+});
+
 router.post('/addStretchGoal', (req, res) => {
   Event.updateOne( { _id: req.body.id },
     { $set: { 'stretchGoals': [{
