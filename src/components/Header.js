@@ -29,6 +29,14 @@ export default class Header extends Component {
     return this.state.loggedIn;
   }
 
+  userNav = () => {
+    if (!this.checkLogin()) {
+      return (
+        <li><Link to='/registration'>Register</Link></li>
+      );
+    }
+  }
+
   render() {
     return (
       <header>
@@ -36,7 +44,7 @@ export default class Header extends Component {
         <h3>Current User: {this.state.user}</h3>
         <ul>
           <li><Link to='/'>Home</Link></li>
-          <li><Link to='/registration'>Register</Link></li>
+          {this.userNav()}
           <li><Link to='/events'>Events</Link></li>
         </ul>
         <Login loggedIn={this.loggedIn} checkLogin={this.checkLogin}/>

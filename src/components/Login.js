@@ -21,7 +21,7 @@ class Login extends Component {
     this.props.loggedIn('');
   }
 
-  userNav = (func) => {
+  loginForm = (func) => {
     if (func) {
       return (
         <form onSubmit={this.logOut}>
@@ -43,7 +43,7 @@ class Login extends Component {
   render() {
     return (
       <div className='login'>
-        {this.userNav(this.props.checkLogin())}
+        {this.loginForm(this.props.checkLogin())}
       </div>
     );
   }
