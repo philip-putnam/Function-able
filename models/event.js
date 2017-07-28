@@ -5,6 +5,7 @@ const Event = new Schema({
   name: String,
   description: String,
   goal: Number,
+  currentContrib: Number, 
   date: String,
   deadline: String,
   dependency: String,

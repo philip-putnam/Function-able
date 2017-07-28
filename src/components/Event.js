@@ -11,28 +11,43 @@ export default class Event extends Component {
     let url = window.location.href;
     let tempEvent = [];
     url = url.replace(/http:\/\/localhost:8080\/event\//, '');
-    url = url.replace(/%20/, ' ');
+    url = url.replace(/%20/g, ' ');
     api.fetchEvent(url)
       .then(res => {
         res.map(event => {
-          console.log(event);
           tempEvent.push(event);
           this.setState({
             event: tempEvent
           });
         });
-        console.log(this.state.event);
       });
+  }
+
+  contribute = () => {
+
   }
 
   render() {
     return (
       <div>
-        <h1>hello</h1>
         <h3>{this.state.event.map((event) => {
           return (
             <div key={event._id}>
-              <h3>{event.name}</h3>
+              <div className='mainDescrip'>
+                <h3>{event.name}</h3>
+                <p>Description: {event.description}</p>
+              </div>
+              <div className='sidebarDescrip'>
+                <p>Goal: ${event.goal}.00</p>
+                <p>Current Contribution: ${event.currentContrib}</p>
+                <p>Date: {event.date}</p>
+                <p>Deadline: {event.deadline}</p>
+                <form onSubmit={this.contribute}>
+                  <label>Contribute: </label>
+                  <input type='number' name='contribute'/>
+                  <button type='submit'>Contribute</button>
+                </form>
+              </div>
             </div>
           );
         })}</h3>

@@ -1,10 +1,12 @@
 .navbar {
   background-color: lightgreen;
-  height: 200px;
+  height: 180px;
 }
 
 .navbar h1 {
   margin-bottom: 2px;
+  margin-right: 0px;
+  margin-top: 0px;
 }
 
 .navLinks {
@@ -21,4 +23,13 @@
 
 .loginForm p {
   margin-top: 0.5px;
+}
+
+.mainDescrip {
+  float: left;
+}
+
+.sidebarDescrip {
+  float: right;
+  width: 300px;
 }

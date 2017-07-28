@@ -26,6 +26,7 @@ router.post('/events', (req, res) => {
     name: req.body.name,
     description: req.body.description,
     goal: req.body.goal,
+    currentContrib: 0,
     date: req.body.date,
     deadline: req.body.deadline,
     dependency: req.body.dependency,
@@ -37,6 +38,15 @@ router.post('/events', (req, res) => {
       res.send(err);
     }
     res.json(events);
+  });
+});
+
+router.post('/update', (req, res) => {
+  Event.updateOne( { name: req.body.name }, { $set: { 'currentContrib': req.body.contrib } }, (err, event) => {
+    if(err) {
+      res.send(err);
+    }
+    res.json(event);
   });
 });
 
