@@ -4,6 +4,8 @@ import { render } from 'react-dom';
 import App from './components/App';
 
 render(
-  <App req='hello'/>,
+  <div>
+    <App />
+  </div>,
   document.querySelector('#react-app')
 );

@@ -7,10 +7,7 @@ import CreateFunction from './CreateFunction';
 export default class Events extends Component {
   constructor(props) {
     super(props);
-    this.state = { temp: [],
-      events: [{
-        name: 'hi', date: '10/3/2017', deadline: '09/24/2017', dependency: 'no', key: '1' },
-      {name: 'bye', date: '7/29/2017', deadline: '07/20/2017', dependency: 'yes', key: '2'}]};
+    this.state = { events: [] };
   }
 
   componentWillMount() {
@@ -20,9 +17,8 @@ export default class Events extends Component {
         res.map(event => {
           tempEvents.push(event);
           this.setState({
-            temp: tempEvents
+            events: tempEvents
           });
-          console.log(this.state.temp);
         });
       });
   }
@@ -43,7 +39,9 @@ export default class Events extends Component {
         <ul>
           {this.state.events.map((event) => {
             return (
-              <li key={event.key}>{event.name} {event.date} {event.deadline} {event.dependency}</li>
+              <li key={event._id}>
+                <Link to={`/event/${event.name}`}>{event.name}</Link>
+              </li>
             );
           })}
         </ul>
