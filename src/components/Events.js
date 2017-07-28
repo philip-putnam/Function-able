@@ -23,11 +23,17 @@ export default class Events extends Component {
       });
   }
 
-  newEvent = (event) => {
-    this.state.events.push(event);
-    this.setState({
-      events: this.state.events
-    });
+  newEvent = () => {
+    let tempEvents = [];
+    api.fetchEvents()
+      .then(res => {
+        res.map(event => {
+          tempEvents.push(event);
+          this.setState({
+            events: tempEvents
+          });
+        });
+      });
   }
 
   render() {

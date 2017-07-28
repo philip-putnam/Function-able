@@ -5,15 +5,6 @@ import * as api from '../api';
 class CreateFunction extends Component {
 
   handleSubmit = (event) => {
-    // let newEvent = {
-    //   name: event.target.eventName.value,
-    //   description: event.target.eventDescription.value,
-    //   goal: event.target.eventGoal.value,
-    //   date: event.target.eventDate.value,
-    //   deadline: event.target.eventDeadline.value,
-    //   dependency: event.target.dependency.value,
-    //   privacy: event.target.privacy.value,
-    // };
     event.preventDefault();
     api.createEvent(
       event.target.eventName.value,
@@ -24,7 +15,7 @@ class CreateFunction extends Component {
       event.target.dependency.value,
       event.target.privacy.value,
     );
-    // this.props.newEvent();
+    this.props.newEvent();
     event.target.eventName.value = '';
     event.target.eventDate.value = '';
     event.target.eventDeadline.value = '';
