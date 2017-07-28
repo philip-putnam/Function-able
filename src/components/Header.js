@@ -6,16 +6,27 @@ import Login from './Login';
 export default class Header extends Component {
   constructor(props) {
     super(props);
-    this.state = { user: '' };
+    this.state = { user: '',
+      loggedIn: false };
   }
 
   loggedIn = (user) => {
     let tempUser = user;
-    console.log(user);
-    this.setState({
-      user: tempUser
-    });
-    console.log(this.state.user);
+    if (!tempUser) {
+      this.setState({
+        user: tempUser,
+        loggedIn: false
+      });
+    } else {
+      this.setState({
+        user: tempUser,
+        loggedIn: true
+      });
+    }
+  }
+
+  checkLogin = () => {
+    return this.state.loggedIn;
   }
 
   render() {
@@ -28,7 +39,7 @@ export default class Header extends Component {
           <li><Link to='/registration'>Register</Link></li>
           <li><Link to='/events'>Events</Link></li>
         </ul>
-        <Login loggedIn={this.loggedIn}/>
+        <Login loggedIn={this.loggedIn} checkLogin={this.checkLogin}/>
       </header>
     );
   }

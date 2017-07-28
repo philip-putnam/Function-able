@@ -21,26 +21,36 @@ class Login extends Component {
     this.props.loggedIn('');
   }
 
-  render() {
-    return (
-      <div className='login'>
-        <form onSubmit={this.handleSubmit}>
-          <label>Username: </label>
-          <input name='username'/><br/>
-          <label>Password: </label>
-          <input name='password'/><br/>
-          <button type='submit'>Login</button>
-        </form>
+  userNav = (func) => {
+    if (func) {
+      return (
         <form onSubmit={this.logOut}>
           <button type='submit'>Logout</button>
         </form>
+      );
+    }
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>Username: </label>
+        <input name='username'/><br/>
+        <label>Password: </label>
+        <input name='password'/><br/>
+        <button type='submit'>Login</button>
+      </form>
+    );
+  }
+
+  render() {
+    return (
+      <div className='login'>
+        {this.userNav(this.props.checkLogin())}
       </div>
     );
   }
 }
 
 Login.propTypes = {
-  currentUser: PropTypes.array,
+  checkLogin: PropTypes.func,
   loggedIn: PropTypes.func
 };
 
