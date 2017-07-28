@@ -8,7 +8,8 @@ const Event = new Schema({
   dependency: String,
   creator: String,
   privacy: String,
-  guests: Array  
+  guests: Array,
+  goals: Array
 });
 
 module.exports = mongoose.model('Event', Event);

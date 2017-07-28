@@ -12,4 +12,24 @@ router.get('/events', (req, res) => {
   });
 });
 
+router.post('/events', (req, res) => {
+  const userData = {
+    name: req.body.name,
+    date: req.body.date,
+    deadline: req.body.deadline,
+    dependency: req.body.dependency,
+    creator: req.body.creator,
+    privacy: req.body.privacy,
+    guests: req.body.guests,
+    goals: req.body.goals,
+  };
+
+  Event.create(userData, (err, events) => {
+    if(err) {
+      res.send(err);
+    }
+    res.json(events);
+  });
+});
+
 module.exports = router;
