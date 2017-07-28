@@ -3,13 +3,15 @@ const Schema = mongoose.Schema;
 
 const Event = new Schema({
   name: String,
+  description: String,
+  goal: Number,
   date: String,
   deadline: String,
   dependency: String,
   creator: String,
   privacy: String,
   guests: Array,
-  goals: Array
+  stretchGoals: Array,
 });
 
 module.exports = mongoose.model('Event', Event);

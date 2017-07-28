@@ -12,16 +12,24 @@ router.get('/events', (req, res) => {
   });
 });
 
+router.post('/event', (req, res) => {
+  Event.find({ name: req.body.name}, (err, event) => {
+    if(err) {
+      res.send(err);
+    }
+    res.json(event);
+  });
+});
+
 router.post('/events', (req, res) => {
   const userData = {
     name: req.body.name,
+    description: req.body.description,
+    goal: req.body.goal,
     date: req.body.date,
     deadline: req.body.deadline,
     dependency: req.body.dependency,
-    creator: req.body.creator,
     privacy: req.body.privacy,
-    guests: req.body.guests,
-    goals: req.body.goals,
   };
 
   Event.create(userData, (err, events) => {
