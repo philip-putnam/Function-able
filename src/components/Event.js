@@ -46,6 +46,16 @@ export default class Event extends Component {
     event.target.contribute.value = '';
   }
 
+  contributeStretchGoal = (event) => {
+    event.preventDefault();
+    let contribAmount = event.target.contribute.value;
+    let newAmount = parseInt(this.state.event[0].stretchGoals[event.target.stretchGoalId.value].currentContrib) + parseInt(contribAmount);
+    let tempStretchGoals = this.state.event[0].stretchGoals;
+    tempStretchGoals[event.target.stretchGoalId.value].currentContrib = newAmount;
+    api.contribStretchGoal(this.state.event[0]._id, tempStretchGoals);
+    this.updateState();
+  }
+
   render() {
     return (
       <div className='eventBody'>
@@ -74,9 +84,10 @@ export default class Event extends Component {
                       <p>Goal Name: {goal.name}</p>
                       <p>Goal ${goal.goal}</p>
                       <p>Current Contribution: ${goal.currentContrib}</p>
-                      <form >
+                      <form onSubmit={this.contributeStretchGoal}>
                         <label>Contribute: </label>
                         <input type='number' name='contribute'/>
+                        <input type='hidden' name='stretchGoalId' value={key} />
                         <button type='submit'>Contribute</button>
                       </form>
                     </div>

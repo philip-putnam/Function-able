@@ -52,9 +52,7 @@ router.post('/update', (req, res) => {
 
 router.post('/updateStretchGoal', (req, res) => {
   Event.updateOne( { _id: req.body.id },
-    { $set: { 'stretchGoals': [{
-      'currentContrib': req.body.contrib,
-    }]
+    { $set: { 'stretchGoals': req.body.stretchGoals
     }}, (err, event) => {
       if(err) {
         res.send(err);
