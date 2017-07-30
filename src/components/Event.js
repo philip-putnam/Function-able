@@ -52,8 +52,24 @@ export default class Event extends Component {
     let newAmount = parseInt(this.state.event[0].stretchGoals[event.target.stretchGoalId.value].currentContrib) + parseInt(contribAmount);
     let tempStretchGoals = this.state.event[0].stretchGoals;
     tempStretchGoals[event.target.stretchGoalId.value].currentContrib = newAmount;
-    api.contribStretchGoal(this.state.event[0]._id, tempStretchGoals);
+    api.updateStretchGoals(this.state.event[0]._id, tempStretchGoals);
+    event.target.contribute.value = '';
     this.updateState();
+  }
+
+  newStretchGoal = (event) => {
+    event.preventDefault();
+    let newStretchGoal = {
+      name: event.target.newStretchName.value,
+      goal: event.target.newStretchGoal.value,
+      currentContrib: '0'
+    };
+    let tempStretchGoals = this.state.event[0].stretchGoals;
+    tempStretchGoals.push(newStretchGoal);
+    api.updateStretchGoals(this.state.event[0]._id, tempStretchGoals);
+    this.updateState();
+    event.target.newStretchName.value = '';
+    event.target.newStretchGoal.value = '';
   }
 
   render() {
@@ -75,6 +91,16 @@ export default class Event extends Component {
                   <label>Contribute: </label>
                   <input type='number' name='contribute'/>
                   <button type='submit'>Contribute</button>
+                </form>
+              </div>
+              <div>
+                <h3>Create a new stretch goal!</h3>
+                <form onSubmit={this.newStretchGoal}>
+                  <label>New Stretch Goal Name: </label>
+                  <input type='text' name='newStretchName'/>
+                  <label>Monetary Goal: </label>
+                  <input type='number' name='newStretchGoal'/>
+                  <button type='submit'>Create</button>
                 </form>
               </div>
               <div className='stretchGoals'>
