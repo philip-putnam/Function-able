@@ -36,12 +36,6 @@ export const contribute = (name, contrib) => {
     .then(res => res.data);
 };
 
-export const addStretchGoal = (id, name, goal) => {
-  return axios.post('/api/addStretchGoal', {
-    id, name, goal
-  }).then(res => res.data);
-};
-
 export const updateStretchGoals = (id, stretchGoals) => {
   return axios.post('/api/updateStretchGoal', {id, stretchGoals})
     .then(res => res.data);
