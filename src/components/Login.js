@@ -26,10 +26,8 @@ class Login extends Component {
     return (
       <div className='login'>
         <form onSubmit={this.handleSubmit}>
-          <label>Username: </label>
-          <input name='username'/><br/>
-          <label>Password: </label>
-          <input name='password'/><br/>
+          <input name='username' placeholder='Username'/><br/>
+          <input name='password' placeholder='Password'/><br/>
           <button type='submit'>Login</button>
         </form>
       </div>

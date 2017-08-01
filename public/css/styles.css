@@ -1,3 +1,7 @@
+input {
+  font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+}
+
 .navbar {
   background-color: lightgreen;
   height: 90px;
@@ -40,6 +44,30 @@
   font-size: 80px;
 }
 
+.login {
+  width: 398px;
+  height: 100px;
+  margin: auto;
+  padding: 20px;
+}
+
+.login input {
+  width: 332px;
+  height: 17px;
+  border-radius: 5px;
+  margin: 8px;
+  padding: 12px;
+}
+
+.login button {
+  width: 332px;
+  height: 32px;
+  margin-left: 20px;
+  border-radius: 5px;
+  background-color: lightblue;
+}
+
+/*
 .loginForm {
   padding: 2px;
   width: 200px;
@@ -48,7 +76,7 @@
 
 .loginForm p {
   margin-top: 0.5px;
-}
+}*/
 
 .eventList {
   width: 400px;
