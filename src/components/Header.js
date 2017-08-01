@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import Login from './Login';
-
 export default class Header extends Component {
   constructor(props) {
     super(props);
@@ -35,7 +33,7 @@ export default class Header extends Component {
   userNav = () => {
     if (!this.checkLogin()) {
       return (
-        <li><Link to='/registration'>Register</Link></li>
+        <Link to='/registration'>Register</Link>
       );
     }
   }
@@ -43,17 +41,16 @@ export default class Header extends Component {
   render() {
     return (
       <header className='navbar'>
-        <h1>Function-able!</h1>
-        <div className='navLinks'>
-          <ul>
-            <li><Link to='/'>Home</Link></li>
-            {this.userNav()}
-            <li><Link to='/events'>Events</Link></li>
-          </ul>
+        <div className='leftNavColumn'>
+          <Link to='/'>Home</Link>
         </div>
-        <div className='loginForm'>
-          <p>Current User: {this.state.user}</p>
-          <Login loggedIn={this.loggedIn} checkLogin={this.checkLogin}/>
+        <div className='midNavColumn'>
+          <h1>Function-able!</h1>
+        </div>
+        <div className='navLinks'>
+          {this.userNav()}
+          <Link to='/events'>Events</Link>
+          <Link to='/login'>Login</Link>
         </div>
       </header>
     );

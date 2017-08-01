@@ -22,29 +22,16 @@ class Login extends Component {
     this.props.loggedIn('');
   }
 
-  loginForm = (func) => {
-    if (func) {
-      return (
-        <form onSubmit={this.logOut}>
-          <button type='submit'>Logout</button>
-        </form>
-      );
-    }
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <label>Username: </label>
-        <input name='username'/><br/>
-        <label>Password: </label>
-        <input name='password'/><br/>
-        <button type='submit'>Login</button>
-      </form>
-    );
-  }
-
   render() {
     return (
       <div className='login'>
-        {this.loginForm(this.props.checkLogin())}
+        <form onSubmit={this.handleSubmit}>
+          <label>Username: </label>
+          <input name='username'/><br/>
+          <label>Password: </label>
+          <input name='password'/><br/>
+          <button type='submit'>Login</button>
+        </form>
       </div>
     );
   }

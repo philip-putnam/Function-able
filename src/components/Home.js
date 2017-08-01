@@ -15,13 +15,11 @@ const Home = () => {
         As this project is still in development much of the functionality is not currently implemented. Login features using a Redux store and session variable is one of the most glaring issues. With very different user stories and features allowing certain users depending on authorization view or edit events this is a HUGE step toward full functionality.
       </p>
 
-      <p>
-        <ul>
-          <li>Styling with CSS or SCSS has not been fully implemented</li>
-          <li>Stretch goals and contributing to them have not been fully fleshed out</li>
-          <li>There is no profile page</li>
-        </ul>
-      </p>
+      <ul>
+        <li>Styling with CSS or SCSS has not been fully implemented</li>
+        <li>Stretch goals and contributing to them have not been fully fleshed out</li>
+        <li>There is no profile page</li>
+      </ul>
 
       <h1 className='reactTag'>React + Node + MongoDB</h1>
 

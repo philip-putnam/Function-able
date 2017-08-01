@@ -3,6 +3,19 @@
   height: 190px;
 }
 
+.leftNavColumn {
+  float: left;
+  margin: auto;
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 30%;
+}
+
+.midNavColumn {
+  margin: auto;
+  width: 30%;
+}
+
 .navbar h1 {
   margin-bottom: 2px;
   margin-right: 0px;
@@ -10,9 +23,13 @@
 }
 
 .navLinks {
-  float: left;
-  style: none;
-  width: 200px;
+  float: right;
+  margin-top: 10px;
+  width: 10%;
+}
+
+.navLinks a {
+  padding: 2px;
 }
 
 .welcomeMessage p {
