@@ -1,8 +1,12 @@
 import React from 'react';
 
-const Home = () => {
+const Home = (props) => {
+  const { decrementFunction, incrementFunction } = props;
   return (
     <div className='welcomeMessage'>
+
+      <button onClick={incrementFunction}>Increment</button><br/>
+      <button onClick={decrementFunction}>Decrement</button><br/>
       <h1>Welcome to Function-able!</h1>
       <p>
         The main functionality of the site is to help people easily create an event or, a function, and then have their friends, guests (or the public) help to crowd fund it, or certain aspects of it. Maybe you need help planning a bachelor/bachelorette party or you really want a certain band to play but it costs more than you have. It never hurts to ask!
