@@ -19,11 +19,3 @@ const renderApp = (Component) => {
 };
 
 renderApp(TemplateContainer);
-
-
-// render(
-//   <div>
-//     <App />
-//   </div>,
-//   document.querySelector('#react-app')
-// );
